@@ -37,10 +37,10 @@ var path = d3.geoPath()
 
 // Data and color scale
 var data = d3.map();
-var colorScheme = d3.schemeReds[6];
+var colorScheme = d3.schemeBlues[7];
 colorScheme.unshift("#eee")
 var colorScale = d3.scaleThreshold()
-    .domain([1, 6, 11, 26, 101, 1001])
+    .domain([1, 26, 76, 151, 501, 1001, 5001])
     .range(colorScheme);
 
 // Legend
@@ -51,8 +51,8 @@ g.append("text")
     .attr("class", "caption")
     .attr("x", 0)
     .attr("y", -6)
-    .text("Students");
-var labels = ['0', '1-5', '6-10', '11-25', '26-100', '101-1000', '> 1000'];
+    .text("Refugees Admitted to the US in 2015");
+var labels = ['0', '1-25', '26-75', '76-150', '151-500', '501-1000', '1001-5000', '> 5000'];
 var legend = d3.legendColor()
     .labels(function (d) { return labels[d.i]; })
     .shapePadding(4)
@@ -63,7 +63,7 @@ svg.select(".legendThreshold")
 // Load external data and boot
 d3.queue()
     .defer(d3.json, "http://enjalot.github.io/wwsd/data/world/world-110m.geojson")
-    .defer(d3.csv, "data.csv", function(d) { data.set(d.code, +d.total); })
+    .defer(d3.csv, "d3data.csv", function(d) { data.set(d.code, +d.total); })
     .await(ready);
 
 function ready(error, topo) {
