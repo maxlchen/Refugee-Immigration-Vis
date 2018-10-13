@@ -7,19 +7,19 @@
     stroke-linejoin: round;
   }
   .countries:hover {
-        fill: orange;
+        fill: transparent;
       }
       body {
         text-align: center;
       }
       div.tooltip { 
           position: absolute;     
-          text-align: center;     
+          text-align: left;     
           width: 80px;          
           height: 14px;         
           padding: 2px;       
-          font: 12px sans-serif;    
-          background: #fff; 
+          font: 12px bold sans-serif;    
+          background: transparent; 
           border: 0px;        
           pointer-events: none;     
       }
@@ -32,7 +32,13 @@
       text-anchor: start;
       font-weight: bold;
   }
+  header {
+  font-size: 36px;
+  font-family: Helvetica;
+  color: #42b3f4;
+}
 </style>
+<header>Fiscal Year 2015 Refugee Admissions</header>
 <svg width="960" height="600"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
