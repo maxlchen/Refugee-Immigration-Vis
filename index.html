@@ -61,7 +61,7 @@ var data = d3.map();
 var colorScheme = d3.schemeReds[7];
 colorScheme.unshift("#eee")
 var colorScale = d3.scaleThreshold()
-    .domain([1, 6, 11, 26, 101, 1001])
+    .domain([1, 26, 76, 151, 501, 1001, 5001])
     .range(colorScheme);
 var tooltip = d3.select("body").append("div") 
         .attr("class", "tooltip")       
